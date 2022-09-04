@@ -191,16 +191,16 @@ $(document).ready(async () => {
     try {
       docStore = await getFirebaseStore();
     } catch (e) {
-      alert(`
-        Error loading firebase datastore:
-
-        ${e.message}
-
-        ${e.stack}
-
-        Falling back to localStorage default.
-      `);
-
+      if (e instanceof Error)
+        alert(`
+          Error loading firebase datastore:
+  
+          ${e.message}
+  
+          ${e.stack}
+  
+          Falling back to localStorage default.
+        `);
       docStore = getLocalStore();
       backend_type = 'local';
     }
@@ -210,15 +210,16 @@ $(document).ready(async () => {
     try {
       docStore = await getSocketServerStore();
     } catch (e) {
-      alert(`
-        Error loading socket server datastore:
+      if (e instanceof Error)
+        alert(`
+          Error loading socket server datastore:
 
-        ${e.message}
+          ${e.message}
 
-        ${e.stack}
+          ${e.stack}
 
-        Falling back to localStorage default.
-      `);
+          Falling back to localStorage default.
+        `);
 
       clientStore.setDocSetting('socketServerPassword', '');
       docStore = getLocalStore();

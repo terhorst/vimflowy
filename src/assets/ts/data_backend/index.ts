@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase/compat/app';
 import localForage from 'localforage';
 // import "firebase/auth";
 
@@ -154,7 +154,8 @@ export class FirebaseBackend extends DataBackend {
         logger.info('Authenticated against Firebase.');
         return credential;
     } catch (x) {
-        logger.error('Authentication against Firebase failed: ' + x.code + ': ' + x.message);
+	if (x instanceof Error)
+          logger.error('Authentication against Firebase failed: ' + x.message);
         return;
     }
   }

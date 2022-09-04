@@ -48,7 +48,8 @@ registerPlugin(
               dangerouslySetInnerHTML={{__html: token.text}}
             />);
           } catch (e) {
-            api.session.showMessage(e.message, { text_class: 'error' });
+            if (e instanceof Error)
+              api.session.showMessage(e.message, { text_class: 'error' });
             emit(...wrapped.unfold(token));
           }
         }
