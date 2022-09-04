@@ -6,6 +6,7 @@ type Props = {
   onLoad?: (filename: string, contents: string) => void;
   onError?: (error: string) => void;
   style?: React.CSSProperties;
+  children: React.ReactNode;
 };
 
 export const load_file = function(file: File): Promise<{name: string, contents: string}> {

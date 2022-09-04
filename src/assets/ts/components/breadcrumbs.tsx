@@ -7,6 +7,7 @@ import { getStyles } from '../themes';
 type CrumbProps = {
   onClick: ((...args: any[]) => void) | undefined,
   session: Session,
+  children: React.ReactNode
 };
 class CrumbComponent extends React.PureComponent<CrumbProps, {}> {
   public render() {

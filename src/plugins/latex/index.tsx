@@ -1,5 +1,5 @@
 import * as React from 'react'; // tslint:disable-line no-unused-variable
-import * as katex from 'katex';
+import katex from 'katex';
 import 'katex/dist/katex.min.css';
 
 import { Tokenizer, Token, RegexTokenizerSplitter, EmitFn } from '../../assets/ts/utils/token_unfolder';
