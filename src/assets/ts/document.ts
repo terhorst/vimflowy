@@ -257,7 +257,7 @@ export default class Document extends EventEmitter {
 
     const [
       line, collapsed, children, parents, pluginData
-    ] = await Promise.all<Line, boolean, Array<Row>, Array<Row>, any>([
+    ] = await Promise.all([
       this.store.getLine(row),
       this.store.getCollapsed(row),
       this.store.getChildren(row),
