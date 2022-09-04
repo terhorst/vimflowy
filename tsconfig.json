@@ -3,7 +3,7 @@
     "target": "ES5",
     "lib": [
       "dom",
-      "es2015",
+      "es2017",
       "esnext.asynciterable"
     ],
     "jsx": "react-jsx",

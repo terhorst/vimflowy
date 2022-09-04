@@ -1,0 +1,8 @@
+require:
+  - ts-node/register
+  - ignore-styles
+watch-extensions: 
+  - tsx
+  - ts
+timeout: 60000
+spec: test/tests/*.ts
