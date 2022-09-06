@@ -57,7 +57,7 @@ export default function makeSocketServer(server: http.Server, options: SocketSer
     let docname: string | null = null;
     ws.on('message', async (msg_string) => {
       logger.debug('received message: %s', msg_string);
-      const msg = JSON.parse(msg_string);
+      const msg = JSON.parse(msg_string.toString());
 
       function respond(result: { value?: any, error: string | null }) {
         ws.send(JSON.stringify({
